@@ -1,36 +1,48 @@
-<script>
-export default {
-    name: 'ToDoList',
-    props: ['listTitle', 'listItems'],
-
-}
-</script>
-
-
 <template>
     <div class="container">
-
-        <div class="d-flex justify-content-between">
-
-            <!-- Icon component -->
-            <h2 v-text="listTitle"></h2>
-            <p>{{ listItems ? listItems.length : 0 }} 件</p>
-        </div>
-        <!-- list -->
-        <ul>
-            <li v-for="item in listItems">
-                <input class='me-4' @click.prevent="$emit('switch', item)" type="checkbox" :name="item.affairName"
-                    :id="item.affairName" />
-                <label :for="item.affairName">{{ item.affairName }}</label>
-                <button @click="$emit('delete', item, item.affairId)" class="ms-3">delete</button>
-            </li>
-        </ul>
-
+        <ListHeader :listTitle="listTitle" :listItemNum="listItemNum"  />
+       <!--  <ListItems @delete="$emit('delete', item, item.affairId)" :listItems="listItems" /> -->
+       <ListItems @delete="demo" :listItems="listItems" />
+    
     </div>
 </template>
 
-<style>
-li {
-    list-style-type: none;
+<script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+import ListItems from './ListItems.vue';
+import ListHeader from './ListHeader.vue';
+
+export default {
+    name: 'ToDoList',
+    props: ['listTitle', 'listItems'],
+    components: {
+        FontAwesomeIcon,
+        ListHeader,
+        ListItems
+    },
+    computed: {
+        listItemNum() {
+            return this.listItems.length
+        }
+    },
+    methods : {
+        demo(a, b) {
+            console.log('this is an emit pass')
+        }
+    }
 }
+</script>
+
+<style scoped>
+
+.container {
+    border: 0px solid blue;
+    padding: 0;
+    min-height: 346px;
+   
+}
+
+
+
 </style>
