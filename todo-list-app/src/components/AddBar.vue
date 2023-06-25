@@ -1,3 +1,13 @@
+
+<template>
+    <div class="container mt-4 mb-4">
+        <form id="affairform" class='d-flex justify-content-between' @submit.prevent='addAffair'>
+            <input type="text" name="affair" id="affair" placeholder="Placeholder" v-model="affairData" /> 
+            <button v-text=" buttonText" type ='submit'></button>
+        </form>
+    </div>
+</template>
+
 <script>
 export default {
     name: 'AddBar',
@@ -19,33 +29,35 @@ export default {
 </script>
 
 
-<template>
-    <div class="container mt-4 mb-4">
-        <form id="affairform" class='d-flex justify-content-between' @submit.prevent='addAffair'>
-            <input type="text" name="affair" id="affair" placeholder="Placeholder" v-model="affairData" /> <button v-text=" buttonText" type ='submit'></button>
-        </form>
-    </div>
-</template>
-
 <style scoped>
-.container{
-    border:0px solid red;
-    padding:0;
-}
 form {
-    border:0px solid yellow;
+    gap:8px;
 }
 .container form input {
     flex-basis: 75%;
     padding:8px;
-    border: 1px solid rgba(111, 184, 144, 1);
+    border: 1px solid var(--primary);
     border-radius: 4px;
 }
+.container form input:focus{
+    outline: 1px solid rgba(111, 184, 144, 1);
+    box-shadow: 0px 0px 1px 1px rgba(46, 100, 70, 0.25);
+
+}
 .container form button {
-    flex-basis: 20%;
+    flex-basis: 25%;
     color:#FFF;
-    background: rgba(111, 184, 144, 1);
+    background: var(--primary);
     border-radius: 8px;
     padding:8px 16px;
+}
+button{
+    border:none
+}
+.container form button:hover {
+    background: var(--secondary);
+}
+.container form button:active {
+    background: var(--grey);
 }
 </style>

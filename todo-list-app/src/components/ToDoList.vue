@@ -1,9 +1,8 @@
 <template>
-    <div class="container">
-        <ListHeader :listTitle="listTitle" :listItemNum="listItemNum"  />
-       <!--  <ListItems @delete="$emit('delete', item, item.affairId)" :listItems="listItems" /> -->
-       <ListItems @delete="demo" :listItems="listItems" />
-    
+    <div class="container pe-3">
+       <ListHeader class="first" :listTitle="listTitle" :listItemNum="listItemNum"  />
+       <ListItems class="second" @passDelete="passDelete" @passSwitch="passSwitch" :listItems="listItems" />
+       <!--  <p>this is a test paragraph with value: {{ temp }}</p> -->
     </div>
 </template>
 
@@ -26,22 +25,30 @@ export default {
             return this.listItems.length
         }
     },
-    methods : {
-        demo(a, b) {
-            console.log('this is an emit pass')
+    methods: {
+        temp(){
+            console.log('pass')
+        },
+        passDelete(item){
+            this.$emit('delete', item)
+        },
+        passSwitch(item) {
+            this.$emit('switch', item)
         }
     }
+
 }
 </script>
 
 <style scoped>
 
 .container {
-    border: 0px solid blue;
+    border-width: 0px;
     padding: 0;
     min-height: 346px;
    
 }
+
 
 
 

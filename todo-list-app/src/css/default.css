@@ -1,5 +1,5 @@
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -12,6 +12,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  /* std pattern */
+  --primary:rgba(111, 184, 144, 1);
+  --secondary:rgba(46, 100, 70, 1);
+  --grey:rgba(154, 154, 154, 1);
+  --grey-dark: rgba(103, 103, 103, 1);
 }
 
 a {
@@ -20,19 +26,7 @@ a {
   text-decoration: inherit;
 }
 
-a:hover {
-  color: #535bf2;
-}
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
-}
 
 body {
   margin: 0;
@@ -93,8 +87,8 @@ button:focus-visible {
   }
 }
 
+
 .fontStd {
- 
   font-size: 16px;
   font-weight: 700;
   line-height: 22px;
@@ -102,9 +96,9 @@ button:focus-visible {
   text-align: left;
 }
 
-.fontDeepGreen {
-  color:rgba(46, 100, 70, 1)
+.secondary-color {
+  color: var(--secondary)
 }
-.fontLightGreen {
-  color:rgba(111, 184, 144, 1);
+.primary-color {
+  color:var(--secondary)
 }
