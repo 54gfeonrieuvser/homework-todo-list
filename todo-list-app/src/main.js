@@ -1,19 +1,11 @@
+import './assets/main.css'
+
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 
-import './css/default.css'
+const app = createApp(App)
 
-//import modules
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
+app.use(createPinia())
 
-//import icon components from fontawesome
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-    faCheck, faTrash, faList, faRectangleList,faTrashCan
-} from "@fortawesome/free-solid-svg-icons"
-library.add( faCheck, faTrash, faList, faRectangleList, faTrashCan)
-
-
-const app = createApp(App);
-const mountedApp = app.mount('#app')
+app.mount('#app')
