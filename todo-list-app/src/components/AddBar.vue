@@ -2,7 +2,7 @@
 <template>
     <div class="container mt-4 mb-4">
         <form id="affairform" class='d-flex justify-content-between' @submit.prevent='addAffair'>
-            <input type="text" name="affair" id="affair" placeholder="Placeholder" v-model="affairData" /> 
+            <input type="text" name="affair" id="affair" placeholder="Placeholder" v-model.trim="affairData" /> 
             <button v-text=" buttonText" type ='submit'></button>
         </form>
     </div>

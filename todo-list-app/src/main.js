@@ -16,4 +16,4 @@ library.add( faCheck, faTrash, faList, faRectangleList, faTrashCan)
 
 
 const app = createApp(App);
-app.mount('#app')
+const mountedApp = app.mount('#app')

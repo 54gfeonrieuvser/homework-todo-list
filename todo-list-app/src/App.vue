@@ -11,7 +11,7 @@
       </div>
     </div>
   </div>
-  <!-- for debug 
+  <!-- for debug  -->
   <div class="debug">
     <div v-bind:style="{ color: 'orange' }">
       <p>what is the whole list: </p> {{ list }}
@@ -22,7 +22,7 @@
     <div :style="{ color: 'blue' }">
       <p>what is the complete list: </p> {{ completedList }}
     </div>
-  </div> -->
+  </div>
 
 </template>
 
@@ -38,7 +38,6 @@ export default {
       appTitle: "My To Do List",
       list: [],
       listIndex: 0,
-      weather: 'Sunny',
       isDeleted: false
     }
   },

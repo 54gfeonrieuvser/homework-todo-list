@@ -21,7 +21,13 @@
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@prettier/plugin-php": "^0.19.6",
     "@vitejs/plugin-vue": "^4.1.0",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.15.1",
+    "prettier": "^2.8.8",
     "vite": "^4.3.9"
   }
 }

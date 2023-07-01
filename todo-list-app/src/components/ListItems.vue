@@ -1,9 +1,9 @@
 <template>
     <div class="list ">
         <ul class="list-group">
-            <li class="list-group-item d-inline-flex justify-content-between list-item " v-for="item in listItems">
+            <li class="list-group-item d-inline-flex justify-content-between list-item " v-for="item in listItems" :key="item.affairId">
                 <div class="list-area d-inline-flex justify-content-between">
-                    <input class='list-check' @click.prevent="$emit('passSwitch', item)" type="checkbox"
+                    <input class='list-check' @click="$emit('passSwitch', item)" type="checkbox"
                         :name="item.affairName" :id="item.affairName" />
                     <input class="list-content ps-2" v-model="item.affairName" />
                 </div>
